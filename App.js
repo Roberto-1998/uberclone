@@ -1,14 +1,17 @@
-import { Provider } from 'react-redux';
-import { store } from './store';
-import { HomeScreen } from './screens';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import AppProviders from './AppProviders';
+import { HomeScreen } from './screens/HomeScreen';
+import { MapScreen } from './screens/MapScreen.js';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <Provider store={store}>
-      <SafeAreaProvider>
-        <HomeScreen />
-      </SafeAreaProvider>
-    </Provider>
+    <AppProviders>
+      <Stack.Navigator initialRouteName='HomeScreen'>
+        <Stack.Screen name='HomeScreen' component={HomeScreen} options={{ headerShown: false }} />
+        <Stack.Screen name='MapScreen' component={MapScreen} options={{ headerShown: false }} />
+      </Stack.Navigator>
+    </AppProviders>
   );
 }
