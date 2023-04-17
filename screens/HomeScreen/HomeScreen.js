@@ -1,9 +1,7 @@
-import { View, Text, SafeAreaView, Image } from 'react-native';
+import { View, SafeAreaView, Image } from 'react-native';
 import React from 'react';
 import tw from 'twrnc';
-import { NavOptions } from './components';
-import CustomGooglePlacesAutocomplete from './components/CustomGooglePlacesAutocomplete';
-import NavFavourites from './components/NavFavourites';
+import { NavOptions, CustomGooglePlacesAutocomplete, NavFavourites } from './components';
 
 const HomeScreen = () => {
   return (

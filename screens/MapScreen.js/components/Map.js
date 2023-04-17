@@ -1,7 +1,5 @@
-import { View, Text } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import tw from 'twrnc';
-
 import React, { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectDestination, selectOrigin, setTravelTimeInformation } from '../../../slices/navSlice';
@@ -11,18 +9,13 @@ import { GOOGLE_MAPS_APIKEY } from '@env';
 const Map = () => {
   const origin = useSelector(selectOrigin);
   const destination = useSelector(selectDestination);
+
+  console.log(origin);
+  console.log(destination);
+
   const dispatch = useDispatch();
 
   const mapRef = useRef(null);
-
-  useEffect(() => {
-    if (!origin || !destination) return;
-
-    /* Zoom & fit to markers */
-    mapRef.current.fitToSuppliedMarkers(['origin', 'destination'], {
-      edgePadding: { top: 10, right: 10, bottom: 10, left: 10 },
-    });
-  }, [origin, destination]);
 
   useEffect(() => {
     if (!origin || !destination) return;

@@ -1,13 +1,10 @@
-import { View, Text } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import React from 'react';
 import tw from 'twrnc';
-import Map from './components/Map';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import NavigateCard from './components/NavigateCard';
-import RideOptionsCard from './components/RideOptionsCard';
-import { TouchableOpacity } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
+import { NavigateCard, RideOptionsCard, Map } from './components';
 
 const Stack = createNativeStackNavigator();
 
@@ -23,10 +20,10 @@ const MapScreen = () => {
         <Icon name='menu' />
       </TouchableOpacity>
 
-      <View style={tw`h-1/2`}>
+      <View style={tw`h-1/3`}>
         <Map />
       </View>
-      <View style={tw`h-1/2`}>
+      <View style={tw`h-2/3`}>
         <Stack.Navigator>
           <Stack.Screen
             name='NavigateCard'
