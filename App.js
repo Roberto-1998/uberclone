@@ -3,8 +3,11 @@ import { EatsScreen } from './screens/EatsScreen';
 import { HomeScreen } from './screens/HomeScreen';
 import { MapScreen } from './screens/MapScreen.js';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { LogBox } from 'react-native';
 
 const Stack = createNativeStackNavigator();
+
+LogBox.ignoreAllLogs();
 
 export default function App() {
   return (
