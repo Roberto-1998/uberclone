@@ -25,6 +25,7 @@
 - React Native
 - JavaScript
 - TailwindCSS
+- Google Maps Services
 
 
 ## Author
